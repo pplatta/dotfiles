@@ -18,9 +18,9 @@ sudo ln -s ~/apps/nvim/bin/nvim /usr/bin/.
 Install [Packer](https://github.com/wbthomason/packer.nvim).
 Go to packer.lua in neovim, source it, then ``:PackerSync``
 
-### Tmux
+### Misc installs
 ```
-sudo apt install tmux
+sudo apt install tmux stow
 ```
 Install [Tmux manager](https://github.com/tmux-plugins/tpm) <br>
 Open ~/.tmux.conf and source it (Ctrl+Space+I).

@@ -1,0 +1,28 @@
+import = ["/home/mirimax/.config/alacritty/themes/themes/gruvbox_material_medium_dark.yaml"]
+
+[font]
+size = 13
+
+[font.bold]
+family = "monospace"
+style = "Bold"
+
+[font.bold_italic]
+family = "monospace"
+style = "Bold Italic"
+
+[font.italic]
+family = "monospace"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F11"
+mods = "None"
+
+[window]
+opacity = 0.98
