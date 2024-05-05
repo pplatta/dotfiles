@@ -29,5 +29,12 @@ alias pnt='git pull --no-tags'
 
 alias gccV='sudo update-alternatives --config gcc'
 alias clangV='sudo update-alternatives --config clang'
-alias nvim="~/apps/nvim/bin/nvim"
+alias n='nvim'
 alias lg="lazygit"
+
+### zoxide setup
+#export _ZO_DATA_DIR='$HOME/.local/share'
+#export _ZO_ECHO='1'
+eval "$(zoxide init bash --no-cmd)"
+alias cd="__zoxide_z"  #W/A, the default doesn't work for me...
+alias zi="__zoxide_zi" #W/A, the default doesn't work for me...

@@ -28,3 +28,4 @@ Open ~/.tmux.conf and source it (Ctrl+Space+I).
 ### Other
 * [LazyGit](https://github.com/jesseduffield/lazygit)
 * [Warpd](https://github.com/rvaiya/warpd)
+* [zoxide](https://github.com/ajeetdsouza/zoxide)
