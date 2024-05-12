@@ -1,6 +1,7 @@
 export PS1="\[\033[38;5;230m\]\u\[$(tput sgr0)\]\[\033[38;5;66m\][\[$(tput sgr0)\]\[\033[38;5;73m\]\w]\[$(tput sgr0)\][\A]\[$(tput sgr0)\]\[\033[38;5;121m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\n> \[$(tput sgr0)\]"
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
+# GIT ALIASES
 alias gc='git checkout'
 alias gr='git rebase'
 alias gss='git status -s'
@@ -13,16 +14,9 @@ alias glo='git log --oneline'
 alias glm='git log --author="Pawel Platta"'
 alias gb='git branch --list'
 alias gbd='git branch -D'
-alias BIOS="cd /c/Source/bios"
 alias amend="git add . && git commit --amend --no-edit"
 alias gp="git add . && git diff --staged --patch > changes.patch"
-alias grs="git reset --soft HEAD^ && git restore --staged ."
-alias gcs="git add . && git commit -s --no-edit"
-alias gwl='git worktree list'
-alias gwa='git worktree add'
-alias gcb='/home/pplatta/scripts/create_branch.sh'
-alias manifest='python /home/pplatta/scripts/manifest_ui.py'
-alias worktreeCreate='python /home/pplatta/scripts/worktree_proj.py'
+alias tmp="git add . && git commit -s --no-edit"
 alias sui='git submodule update --init'
 alias grh='git reset --hard'
 alias pnt='git pull --no-tags'
