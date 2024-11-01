@@ -42,9 +42,6 @@ vim.keymap.set("n", "Q", "<cmd>noh<CR>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 --vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>")
-vim.keymap.set("n", "<leader>gf", "<cmd>Telescope advanced_git_search diff_commit_file<CR>")
-vim.keymap.set("n", "<leader>gl", "<cmd>Telescope advanced_git_search diff_commit_line<CR>")
 
 --vim.keymap.set("n", "<leader><leader>", function()
 --  vim.keymap.  vim.cmd("so")
@@ -74,10 +71,14 @@ vim.keymap.set("n", "<C-p>", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fs", builtin.grep_string, {})
 vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
-
+vim.keymap.set("n", "<leader>gl", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>ts", builtin.resume, {})
 vim.keymap.set("n", "<leader>fg", function()
   builtin.grep_string({ search = vim.fn.input("Grep > ") })
+end)
+
+vim.keymap.set("n", "<leader>gx", function()
+  builtin.grep_string({ search = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t") })
 end)
 
 -- harpoon
@@ -85,6 +86,14 @@ local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
 vim.keymap.set("n", "<leader>a", mark.add_file)
+
+vim.keymap.set("n", "<F7>", "<cmd>Gitsigns next_hunk<CR>")
+vim.keymap.set("n", "<F8>", "<cmd>Gitsigns prev_hunk<CR>")
+vim.keymap.set("n", "<F6>", "<cmd>Gitsigns preview_hunk<CR>")
+vim.keymap.set("n", "<F9>", "<cmd>Gitsigns stage_hunk<CR>")
+vim.keymap.set("v", "<F9>", "<cmd>Gitsigns stage_hunk<CR>")
+vim.keymap.set("n", "<F10>", "<cmd>Gitsigns reset_hunk<CR>")
+vim.keymap.set("v", "<F10>", "<cmd>Gitsigns reset_hunk<CR>")
 
 --lsp
 vim.g.lsp_zero_ui_float_border = 0
@@ -118,5 +127,5 @@ lsp.on_attach(function(bufnr)
   vim.keymap.set("i", "<C-h>", function()
     vim.lsp.buf.signature_help()
   end, opts)
+  vim.keymap.set("n", "<leader>da", vim.diagnostic.open_float, opts)
 end)
-vim.keymap.set("n", "<leader>da", vim.diagnostic.open_float, opts)

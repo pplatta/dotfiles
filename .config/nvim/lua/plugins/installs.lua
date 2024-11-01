@@ -1,11 +1,5 @@
 return {
   {
-    "stevearc/oil.nvim",
-    opts = {},
-    -- Optional dependencies
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-  {
     "theprimeagen/harpoon",
   },
   {
@@ -13,9 +7,6 @@ return {
   },
   {
     "nvim-tree/nvim-web-devicons",
-  },
-  {
-    "lewis6991/spaceless.nvim",
   },
   {
     "smoka7/hop.nvim",
@@ -33,5 +24,21 @@ return {
   },
   {
     "nvim-lua/plenary.nvim",
+  },
+  {
+    "tpope/vim-fugitive",
+  },
+  {
+    "cappyzawa/trim.nvim",
+  },
+  {
+    "ellisonleao/glow.nvim",
+    cmd = "Glow",
+    config = function()
+      require("glow").setup({
+        style = "dark",
+        width = 200,
+      })
+    end,
   },
 }

@@ -1,31 +1,18 @@
-Clone the repo as ```~/.config/nvim```.
+### Installation
 
-### Fuzzy Finder:
-```
-sudo apt install fzf ripgrep
-```
-```
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-```
+Download neovim (last stable v0.9.4):
+[Release page](https://github.com/neovim/neovim/releases)
 
-### Neovim
-Add neovim as soft link for using it as git's default editor:
+Add neovim as a soft link:
 ```
 sudo ln -s ~/apps/nvim/bin/nvim /usr/bin/.
 ```
-[Release page](https://github.com/neovim/neovim/releases), last stable v0.9.4. <br>
-Install [Packer](https://github.com/wbthomason/packer.nvim).
-Go to packer.lua in neovim, source it, then ``:PackerSync``
-
-### Misc installs
+## Init repo files
 ```
-sudo apt install tmux stow
+sudo apt install stow
 ```
-Install [Tmux manager](https://github.com/tmux-plugins/tpm) <br>
-Open ~/.tmux.conf and source it (Ctrl+Space+I).
-
-### Other
-* [LazyGit](https://github.com/jesseduffield/lazygit)
-* [Warpd](https://github.com/rvaiya/warpd)
-* [zoxide](https://github.com/ajeetdsouza/zoxide)
+In the repository:
+```
+stow -t ~ --adopt .
+```
+The adopt option will override the repo's files, so resolve the conflicts locally.

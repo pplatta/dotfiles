@@ -57,12 +57,12 @@ return {
       config = function()
         -- This is where all the LSP shenanigans will live
         local lsp_zero = require("lsp-zero")
-        lsp_zero.extend_lspconfig()
+        --lsp_zero.extend_lspconfig()
 
         lsp_zero.on_attach(function(client, bufnr)
           -- see :help lsp-zero-keybindings
           -- to learn the available actions
-          --lsp_zero.default_keymaps({ buffer = bufnr })
+          lsp_zero.default_keymaps({ buffer = bufnr })
         end)
 
         -- (Optional) Configure lua language server for neovim
@@ -71,4 +71,8 @@ return {
       end,
     },
   },
+  require("lspconfig").clangd.setup({}),
+
+  --- in your own config you should replace `example_server`
+  --- with the name of a language server you have installed
 }
